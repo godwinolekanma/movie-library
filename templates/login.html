@@ -1,0 +1,32 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <form class="form-signin center-screen" action="{{ url_for('login') }}" method="post">
+      <div class="text-center mb-4">
+        <img class="mb-4 " src="{{url_for('static', filename='assets/img/login_pic.svg')}}" alt="login image" width="72" height="72">
+        <h1 class="mb-3 font-weight-normal header">Please sign in</h1>
+      </div>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <p class="flash" style="color: red;">{{ message }}</p>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div class="form-label-group">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required="" autofocus="">
+        <label for="inputEmail">Email address</label>
+      </div>
+      <div class="form-label-group">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required="">
+        <label for="inputPassword">Password</label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+    </form>
+</div>
+{% endblock %}

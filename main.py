@@ -193,9 +193,6 @@ def select():
     response = requests.get(url=movie_api, headers=header)
     data = response.json()
     existing_movie = Movie.query.filter_by(description=data["overview"], user_id=current_user.id).first()
-    data_desc = data["overview"]
-    desc = data_desc[:240]
-
     if existing_movie in current_user.movie:
         flash('Movie Already Exists!')
         return redirect(url_for('home'))
@@ -203,7 +200,7 @@ def select():
         new_movie = Movie(
             title=data["original_title"],
             year=str(data["release_date"]).split("-")[0],
-            description=desc,
+            description=data["overview"],
             img_url=f'https://image.tmdb.org/t/p/original{data["poster_path"]}',
             user=current_user
         )

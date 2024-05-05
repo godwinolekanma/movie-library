@@ -192,7 +192,7 @@ def select():
     }
     response = requests.get(url=movie_api, headers=header)
     data = response.json()
-    existing_movie = Movie.query.filter_by(description=data["overview"], user_id=current_user.id).first()
+    existing_movie = Movie.query.filter_by(description=data["overview"][:240], user_id=current_user.id).first()
     if existing_movie in current_user.movie:
         flash('Movie Already Exists!')
         return redirect(url_for('home'))

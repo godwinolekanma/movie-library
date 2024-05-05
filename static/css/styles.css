@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 *, *:before, *:after {
-	 box-sizing: border-box;
+	 -webkit-box-sizing: border-box;
+	         box-sizing: border-box;
 }
  html {
 	 font-size: 18px;
@@ -13,7 +21,9 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
  body {
@@ -31,11 +41,18 @@ main{
      font-size: 3rem;
 }
  .content {
+	 display: -webkit-box;
+	 display: -ms-flexbox;
 	 display: flex;
 	 margin: 0 auto;
-	 justify-content: center;
-	 align-items: center;
-	 flex-wrap: wrap;
+	 -webkit-box-pack: center;
+	     -ms-flex-pack: center;
+	         justify-content: center;
+	 -webkit-box-align: center;
+	     -ms-flex-align: center;
+	         align-items: center;
+	 -ms-flex-wrap: wrap;
+	     flex-wrap: wrap;
 	 max-width: 1500px;
 }
  p.overview {
@@ -43,7 +60,8 @@ main{
 	 height: 200px;
 	 width: 100%;
 	 overflow: hidden;
-	 text-overflow: ellipsis;
+	 -o-text-overflow: ellipsis;
+	    text-overflow: ellipsis;
 }
  .heading {
 	 width: 100%;
@@ -63,6 +81,7 @@ main{
 	 position: absolute;
 	 width: 60px;
 	 height: 4px;
+	 background: -o-linear-gradient(315deg, #1a9be6, #1a57e6);
 	 background: linear-gradient(135deg, #1a9be6, #1a57e6);
 	 bottom: 0;
 }
@@ -79,7 +98,8 @@ main{
 	 min-width: calc(33% - 3rem);
 	 height: 400px;
 	 min-height: 400px;
-	 perspective: 1000px;
+	 -webkit-perspective: 1000px;
+	         perspective: 1000px;
 	 margin: 1rem auto;
 	 position: relative;
 }
@@ -94,19 +114,28 @@ main{
 	}
 }
  .front, .back {
+	 display: -webkit-box;
+	 display: -ms-flexbox;
 	 display: flex;
 	 border-radius: 6px;
 	 background-position: center;
 	 background-size: cover;
 	 text-align: center;
-	 justify-content: center;
-	 align-items: center;
+	 -webkit-box-pack: center;
+	     -ms-flex-pack: center;
+	         justify-content: center;
+	 -webkit-box-align: center;
+	     -ms-flex-align: center;
+	         align-items: center;
 	 position: absolute;
 	 height: 100%;
 	 width: 100%;
 	 -webkit-backface-visibility: hidden;
 	 backface-visibility: hidden;
-	 transform-style: preserve-3d;
+	 -webkit-transform-style: preserve-3d;
+	         transform-style: preserve-3d;
+	 -webkit-transition: ease-in-out 600ms;
+	 -o-transition: ease-in-out 600ms;
 	 transition: ease-in-out 600ms;
 }
  .front {
@@ -126,32 +155,40 @@ main{
 	 left: 0;
 	 right: 0;
 	 bottom: 0;
+	 background: -o-linear-gradient(315deg, #1a9be6, #1a57e6);
 	 background: linear-gradient(135deg, #1a9be6, #1a57e6);
 	 opacity: 0.25;
 	 z-index: -1;
 }
  .card:hover .front {
-	 transform: rotateY(180deg);
+	 -webkit-transform: rotateY(180deg);
+	         transform: rotateY(180deg);
 }
  .card:nth-child(even):hover .front {
-	 transform: rotateY(-180deg);
+	 -webkit-transform: rotateY(-180deg);
+	         transform: rotateY(-180deg);
 }
  .back {
 	 background: #fff;
-	 transform: rotateY(-180deg);
+	 -webkit-transform: rotateY(-180deg);
+	         transform: rotateY(-180deg);
 	 padding: 0 2em;
 }
  .card:hover .back {
-	 transform: rotateY(0deg);
+	 -webkit-transform: rotateY(0deg);
+	         transform: rotateY(0deg);
 }
  .card:nth-child(even) .back {
-	 transform: rotateY(180deg);
+	 -webkit-transform: rotateY(180deg);
+	         transform: rotateY(180deg);
 }
  .card:nth-child(even):hover .back {
-	 transform: rotateY(0deg);
+	 -webkit-transform: rotateY(0deg);
+	         transform: rotateY(0deg);
 }
  .button {
-	 transform: translateZ(40px);
+	 -webkit-transform: translateZ(40px);
+	         transform: translateZ(40px);
 	 cursor: pointer;
 	 -webkit-backface-visibility: hidden;
 	 backface-visibility: hidden;
@@ -160,18 +197,25 @@ main{
 	 padding: 0.5em 1em;
 	 border-radius: 100px;
 	 font: inherit;
+	 background: -o-linear-gradient(315deg, #1a9be6, #1a57e6);
 	 background: linear-gradient(135deg, #1a9be6, #1a57e6);
 	 border: none;
 	 position: relative;
-	 transform-style: preserve-3d;
+	 -webkit-transform-style: preserve-3d;
+	         transform-style: preserve-3d;
+	 -webkit-transition: 300ms ease;
+	 -o-transition: 300ms ease;
 	 transition: 300ms ease;
 }
  .button:before {
+	 -webkit-transition: 300ms ease;
+	 -o-transition: 300ms ease;
 	 transition: 300ms ease;
 	 position: absolute;
 	 display: block;
 	 content: '';
-	 transform: translateZ(-40px);
+	 -webkit-transform: translateZ(-40px);
+	         transform: translateZ(-40px);
 	 -webkit-backface-visibility: hidden;
 	 backface-visibility: hidden;
 	 height: calc(100% - 20px);
@@ -179,29 +223,36 @@ main{
 	 border-radius: 100px;
 	 left: 10px;
 	 top: 16px;
-	 box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+	 -webkit-box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+	         box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
 	 background-color: rgba(26, 87, 230, 0.25);
 }
 
 .button.delete-button {
 	 background-color: rgba(230, 87, 230, 0.25);
+	 background: -o-linear-gradient(315deg, #e61a46, #e61a1a);
 	 background: linear-gradient(135deg, #e61a46, #e61a1a);
 }
 .button.delete-button:before {
 	 background-color: rgba(230, 87, 230, 0.25);
-	 box-shadow: 0 0 10px 10px rgba(230, 87, 230, 0.25);
+	 -webkit-box-shadow: 0 0 10px 10px rgba(230, 87, 230, 0.25);
+	         box-shadow: 0 0 10px 10px rgba(230, 87, 230, 0.25);
 }
  .button:hover {
-	 transform: translateZ(55px);
+	 -webkit-transform: translateZ(55px);
+	         transform: translateZ(55px);
 }
  .button:hover:before {
-	 transform: translateZ(-55px);
+	 -webkit-transform: translateZ(-55px);
+	         transform: translateZ(-55px);
 }
  .button:active {
-	 transform: translateZ(20px);
+	 -webkit-transform: translateZ(20px);
+	         transform: translateZ(20px);
 }
  .button:active:before {
-	 transform: translateZ(-20px);
+	 -webkit-transform: translateZ(-20px);
+	         transform: translateZ(-20px);
 	 top: 12px;
 	 top: 12px;
 }
@@ -233,10 +284,17 @@ header.masthead {
 }
 
 .image-container {
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add ease-in-out transition */
+      -webkit-transition: -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+      transition: -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+      -o-transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out; /* Add ease-in-out transition */
     }
 
  .image-container:hover {
-      transform: scale(1.05); /* Scale up the card on hover */
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+      -webkit-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+              transform: scale(1.05); /* Scale up the card on hover */
+      -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add shadow effect */
     }

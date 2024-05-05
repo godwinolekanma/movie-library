@@ -55,7 +55,7 @@ class Movie(db.Model):
     __tablename__ = "movie"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String(250), nullable=False)
-    year: Mapped[int] = mapped_column(Integer, nullable=False)
+    year: Mapped[str] = mapped_column(String, nullable=False)
     description: Mapped[str] = mapped_column(String(250), nullable=False)
     rating: Mapped[float] = mapped_column(Float, nullable=True)
     ranking: Mapped[int] = mapped_column(Integer, nullable=True)
@@ -199,7 +199,7 @@ def select():
     else:
         new_movie = Movie(
             title=data["original_title"],
-            year=int(str(data["release_date"]).split("-")[0]),
+            year=str(data["release_date"]).split("-")[0],
             description=data["overview"],
             img_url=f'https://image.tmdb.org/t/p/original{data["poster_path"]}',
             user=current_user

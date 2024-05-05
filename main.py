@@ -181,7 +181,7 @@ def add():
 
 
 # Route for selecting a movie
-@app.route("/select")
+@app.route("/select", methods=["POST", "GET"])
 @login_required
 def select():
     movie_id = request.args.get("id")

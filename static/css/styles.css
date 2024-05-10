@@ -18,7 +18,7 @@
 }
 
 .center-screen{
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -35,6 +35,7 @@
 }
 
 main{
+    position: relative;
     min-height: 75vh;
 }
 .large {
@@ -94,8 +95,7 @@ main{
  .card {
 	 color: inherit;
 	 cursor: pointer;
-	 width: calc(33% - 3rem);
-	 min-width: calc(33% - 3rem);
+	 width: 270px;
 	 height: 400px;
 	 min-height: 400px;
 	 -webkit-perspective: 1000px;
@@ -103,16 +103,9 @@ main{
 	 margin: 1rem auto;
 	 position: relative;
 }
- @media screen and (max-width: 800px) {
-	 .card {
-		 width: calc(50% - 3rem);
-	}
-}
- @media screen and (max-width: 500px) {
-	 .card {
-		 width: 100%;
-	}
-}
+
+
+
  .front, .back {
 	 display: -webkit-box;
 	 display: -ms-flexbox;
